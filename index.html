@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="facebook-domain-verification" content="k03cw9t8xvsngj87b3hhe6lhiye4vs" />
+    <title>Ninaleggins - Servicios de Alojamiento y Hospedaje</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, #2563eb, #3b82f6);
+            color: white;
+            padding: 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+        header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .header-content {
+            text-align: center;
+      position: relative;
+      z-index: 2;
+            padding: 80px 0;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(37, 99, 235, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+            color: #60a5fa;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-highlight {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .experience-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border-left: 5px solid #3b82f6;
+            transition: all 0.3s ease;
+            height: auto;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+      position: relative;
+            padding-left: 20px;
+        }
+
+        .service-list li:before {
+            content: "•";
+            color: #3b82f6;
+            font-weight: bold;
+      position: absolute;
+            left: 0;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Three Column Services Layout */
+        .services-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .service-overview-card {
+            background: linear-gradient(45deg, #1d4ed8, #2563eb);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .service-overview-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #60a5fa;
+        }
+
+        .service-overview-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-overview-card li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #3b82f6;
+        }
+
+        .team-member h4 {
+            font-size: 1.3rem;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .team-member .position {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-member .quote {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #2563eb, #1d4ed8);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #60a5fa;
+        }
+
+        .contact-item {
+      display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .contact-item i {
+            color: #60a5fa;
+            margin-right: 15px;
+            margin-top: 3px;
+            width: 20px;
+        }
+
+        .contact-item span {
+            line-height: 1.6;
+        }
+
+        .business-hours {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .business-hours h4 {
+            color: #60a5fa;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .business-hours p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .business-hours strong {
+            color: #60a5fa;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .services-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                padding: 40px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Additional styling to match Reythales theme */
+        .highlight-text {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .mission-section {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .mission-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive WhatsApp button */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* Modern animations and effects */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Enhanced gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gradient-bg-alt {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        /* Modern button styles */
+        .btn-modern {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">NINALEGGINS</h1>
+                <p class="logo-subtitle">Servicios de Alojamiento y Hospedaje</p>
+                <p class="tagline">Experiencias únicas de alojamiento. Ninaleggins redefine la hospitalidad con servicios premium en San José.</p>
+      </div>
+    </div>
+  </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Meet the team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        Ninaleggins es una empresa innovadora especializada en servicios de alojamiento premium en San José. Transformamos la experiencia de hospedaje con soluciones personalizadas que combinan comodidad, elegancia y tecnología. Nuestro enfoque único garantiza que cada huésped disfrute de una estadía excepcional y memorable.
+                    </p>
+                    <p class="about-text">
+                        En Ninaleggins, contamos con una exclusiva selección de propiedades premium ubicadas estratégicamente en San José. Nuestro equipo de expertos en hospitalidad gestiona cada detalle para ofrecer experiencias únicas que superan las expectativas más altas.
+                    </p>
+                </div>
+                <div>
+                    <div class="experience-highlight">
+                        <h3>Excelencia Ninaleggins</h3>
+              </div>
+                    <p class="about-text">
+                        Implementamos nuestro exclusivo <strong class="highlight-text">SISTEMA NINALEGGINS DE EXPERIENCIA PREMIUM</strong> que revoluciona el concepto de alojamiento. Somos pioneros en hospitalidad de lujo y atención personalizada en San José.
+                    </p>
+                    <div class="mission-section">
+                        <h3>Nuestra Visión</h3>
+                        <p>Ser la empresa líder en experiencias de alojamiento premium, creando momentos únicos que nuestros huéspedes recordarán para siempre</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Servicios Premium</h2>
+            <p class="section-subtitle">Experiencias de alojamiento que redefinen el lujo y la comodidad</p>
+
+            <!-- Three Column Overview -->
+            <div class="services-overview">
+                <div class="service-overview-card">
+                    <h4>Alojamiento Premium</h4>
+                    <ul>
+                        <li>Suites de lujo con diseño exclusivo</li>
+                        <li>Departamentos premium completamente equipados</li>
+                        <li>Estadías cortas y prolongadas</li>
+                        <li>Ubicaciones privilegiadas en la ciudad</li>
+                        <li>Tarifas competitivas con valor excepcional</li>
+                    </ul>
+              </div>
+                <div class="service-overview-card">
+                    <h4>Servicios Exclusivos</h4>
+                    <ul>
+                        <li>Limpieza premium y mantenimiento</li>
+                        <li>Ropa de cama de alta calidad</li>
+                        <li>WiFi de ultra alta velocidad</li>
+                        <li>Concierge personalizado 24/7</li>
+                        <li>Asistencia turística VIP</li>
+                    </ul>
+            </div>
+                <div class="service-overview-card">
+                    <h4>Comodidades de Lujo</h4>
+                    <ul>
+                        <li>Cocina gourmet completamente equipada</li>
+                        <li>Climatización inteligente</li>
+                        <li>Smart TV y entretenimiento premium</li>
+                        <li>Seguridad avanzada 24/7</li>
+                        <li>Estacionamiento privado y seguro</li>
+                    </ul>
+          </div>
+      </div>
+      
+            <!-- Detailed Services -->
+            <div class="services-grid">
+        <div class="service-card card-hover">
+            <h3>Alojamiento de Lujo</h3>
+                    <p>Ninaleggins presenta una exclusiva selección de opciones de alojamiento premium diseñadas para los huéspedes más exigentes en San José:</p>
+                    <ul class="service-list">
+                        <li>Suites privadas con baño de lujo</li>
+                        <li>Habitaciones premium con servicios exclusivos</li>
+                        <li>Departamentos de diseño con mobiliario premium</li>
+                        <li>Estudios ejecutivos para estadías prolongadas</li>
+                        <li>Alojamiento VIP para familias y grupos</li>
+                        <li>Opciones pet-friendly de lujo disponibles</li>
+                        <li>Ubicaciones privilegiadas cerca del centro y la playa</li>
+                        <li>Transporte privado y público de fácil acceso</li>
+                        <li>Ambientes seguros, elegantes y ultra confortables</li>
+                        <li>Tarifas competitivas con valor excepcional</li>
+                        <li>Contratos flexibles adaptados a cada necesidad</li>
+                    </ul>
+          </div>
+          
+        <div class="service-card card-hover">
+            <h3>Gestión Premium y Mantenimiento</h3>
+                    <p>Ninaleggins se encarga de todos los aspectos de gestión y mantenimiento con estándares de lujo para garantizar una experiencia perfecta desde el primer momento:</p>
+                    <ul class="service-list">
+                        <li>Inspección exhaustiva y verificación premium de propiedades</li>
+                        <li>Limpieza profunda y sanitización antes del ingreso</li>
+                        <li>Mantenimiento preventivo y correctivo de alta calidad</li>
+                        <li>Gestión integral de servicios públicos</li>
+                        <li>Atención de emergencias VIP 24/7</li>
+                    </ul>
+          </div>
+          
+        <div class="service-card card-hover">
+            <h3>Servicios VIP Complementarios</h3>
+                    <p>Ninaleggins ofrece servicios exclusivos adicionales para elevar tu experiencia de alojamiento a un nivel superior:</p>
+                    <ul class="service-list">
+                        <li>Asesoramiento turístico VIP personalizado</li>
+                        <li>Reservas exclusivas de actividades y excursiones</li>
+                        <li>Servicio de traslados premium desde/hacia aeropuerto</li>
+                        <li>Recomendaciones gastronómicas de lujo locales</li>
+                    </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Conoce nuestro equipo</h2>
+            
+            <div class="team-grid">
+        <div class="team-member card-hover">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face" alt="Sofia Ninaleggins">
+                    <h4>Sofia Ninaleggins</h4>
+                    <p class="position">Directora General</p>
+                    <p class="quote">"En Ninaleggins, nos dedicamos a crear experiencias únicas de alojamiento que superen las expectativas de nuestros huéspedes"</p>
+          </div>
+
+        <div class="team-member card-hover">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Alejandro Torres">
+                    <h4>Alejandro Torres</h4>
+                    <p class="position">Gerente de Operaciones</p>
+                    <p class="quote">"Cada detalle cuenta en Ninaleggins. Trabajamos incansablemente para ofrecer la mejor experiencia de alojamiento"</p>
+            </div>
+
+        <div class="team-member card-hover">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face" alt="Valentina Cruz">
+                    <h4>Valentina Cruz</h4>
+                    <p class="position">Coordinadora de Alojamiento</p>
+                    <p class="quote">"En Ninaleggins seleccionamos cada propiedad con el máximo cuidado para garantizar comodidad y calidad excepcional"</p>
+            </div>
+
+        <div class="team-member card-hover">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Martín Herrera">
+                    <h4>Martín Herrera</h4>
+                    <p class="position">Especialista en Atención al Cliente</p>
+                    <p class="quote">"En Ninaleggins, tu satisfacción es nuestra prioridad. Estamos aquí para ti las 24 horas del día"</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section" style="background: linear-gradient(45deg, #2563eb, #1d4ed8); padding: 80px 0; color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">¿Listo para tu próxima experiencia premium?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">Descubre el alojamiento de lujo que mereces en San José</p>
+            <a href="https://wa.me/5491165525950?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20alojamiento" class="btn-modern" target="_blank" style="font-size: 1.1rem; padding: 15px 30px;">
+                <i class="fab fa-whatsapp" style="margin-right: 10px;"></i>
+                Contactar Ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Tienes alguna consulta?</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ubicación de la Oficina</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Brasil 22, San José</span>
+        </div>
+        
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+5491165525950</span>
+            </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>agenciarooming@gmail.com</span>
+          </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>CUIL: 20630131651</span>
+          </div>
+        </div>
+        
+                <div class="contact-info">
+                    <div class="business-hours">
+                        <h4>Horarios de Atención</h4>
+                        <p><strong>Días de atención:</strong></p>
+                        <p>Lunes a Viernes: 9:00 a 18:00 hs</p>
+                        <p>Sábados: 9:00 a 15:00 hs</p>
+                        <br>
+                        <p><strong>Atención de emergencias:</strong></p>
+                        <p>Disponible 24/7</p>
+                        <p>WhatsApp: +5491165525950</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ninaleggins. Todos los derechos reservados</p>
+            <p>Servicios de alojamiento de calidad en San José</p>
+    </div>
+  </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scrolling effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(37, 99, 235, 0.98)';
+            } else {
+                nav.style.background = 'rgba(37, 99, 235, 0.95)';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add fade-in class to sections
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in');
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5491165525950?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20alojamiento" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
